@@ -1,0 +1,259 @@
+/* Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #800cdf, #0b34ea, #14e209, #61DAFB);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  text-align: center;
+  overflow-x: hidden;
+  color: #000; /* Default text color black */
+  transition: color 0.5s ease-in-out;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Section */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-pic img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 3px solid gold; /* Golden border for profile picture */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.intro-text h1 {
+  font-size: 2.5em;
+  margin-top: 20px;
+  transition: color 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-20px); /* Initially invisible and shifted upward */
+  animation: fadeInText 1s ease-in-out forwards 0.5s; /* Fades in after 0.5s */
+}
+
+.intro-text p {
+  font-size: 1.4em; /* Increased font size */
+  margin-top: 10px;
+  transition: color 0.3s ease-in-out;
+  color: #FFD700; /* Gold color for shimmer effect */
+  text-shadow: 
+    0 0 5px rgba(255, 255, 0, 0.5), /* Yellow glow */
+    0 0 10px rgba(255, 255, 0, 0.3), 
+    0 0 15px rgba(0, 0, 255, 0.5), /* Blue glow */
+    0 0 20px rgba(0, 0, 255, 0.2);
+  animation: shimmer 2s infinite alternate; /* Shimmering effect */
+}
+
+@keyframes shimmer {
+  0% {
+    text-shadow: 
+      0 0 5px rgba(255, 255, 0, 0.5),
+      0 0 10px rgba(255, 255, 0, 0.3),
+      0 0 15px rgba(0, 0, 255, 0.5),
+      0 0 20px rgba(0, 0, 255, 0.2);
+  }
+  100% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 0, 0.8),
+      0 0 15px rgba(255, 255, 0, 0.5),
+      0 0 20px rgba(0, 0, 255, 0.8),
+      0 0 30px rgba(0, 0, 255, 0.4);
+  }
+}
+
+
+
+/* Name Box */
+.name-box {
+  font-size: 2.5em;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  padding: 20px; /* Increased padding for a box effect */
+  border-radius: 10px; /* Rounded corners for the box */
+  border: 2px solid gold;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.name-box:hover {
+  transform: scale(1.1);
+  background-color: gold;
+  color: white;
+}
+
+/* About Section */
+.about {
+  margin: 40px 0;
+  opacity: 0; /* Initially invisible */
+  transform: translateY(100px); /* Positioned off-screen (below) */
+  animation: slideUp 1s ease-in-out forwards 1s; /* Slide up animation, starts after 1s */
+}
+
+.about h2 {
+  font-size: 2.2em;
+  font-family: 'Dancing Script', cursive; /* Stylish font for headings */
+  transition: color 0.3s ease-in-out;
+}
+
+.about p {
+  margin-top: 20px;
+  font-size: 1.3em; /* Increased font size */
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif; /* Simple font for paragraphs */
+  transition: color 0.3s ease-in-out;
+  color: #FFFFFF; /* White color for better contrast */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+
+
+
+/* Social Links Section */
+.socials {
+  margin: 40px 0;
+}
+
+.socials h2 {
+  font-size: 2.2em;
+  font-family: 'Dancing Script', cursive; /* Stylish font for headings */
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-link {
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.2em;
+  border: 2px solid gold; /* Golden border for social links */
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: black; /* Black text for social links */
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: gold;
+  color: white; /* Change color on hover */
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  font-size: 0.9em;
+  color: black; /* Black text for footer */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .intro-text h1 {
+    font-size: 2.2em;
+  }
+
+  .profile-pic img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .social-link {
+    font-size: 1.1em;
+    padding: 8px 15px;
+  }
+
+  .about p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro-text h1 {
+    font-size: 2em;
+  }
+
+  .profile-pic img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .social-link {
+    font-size: 1em;
+    padding: 8px 15px;
+  }
+
+  .about p {
+    font-size: 0.95em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .intro-text h1 {
+    font-size: 1.8em;
+  }
+
+  .profile-pic img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .social-link {
+    font-size: 0.9em;
+    padding: 6px 10px;
+  }
+
+  .about p {
+    font-size: 0.9em;
+  }
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text Fade-in Animation */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Section Slide-up Animation */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
